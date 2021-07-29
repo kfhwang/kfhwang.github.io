@@ -1,0 +1,58 @@
+webm轉hevc含alpha
+ffmpeg -i Volleyball.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=640:360" -alpha_quality .8  -vtag hvc1 VolleyballAlpha.mov
+//OK below
+ffmpeg -i 坐地排球.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=1280x720" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Volleyball720p.mov
+//crop 1080x1080
+~/desktop/ffmpeg -i 公告.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:390:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Announcement.mov
+~/desktop/ffmpeg -i 手語翻譯.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Translation.mov
+~/desktop/ffmpeg -i 生日.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:400:0" -alpha_quality 0.01 -b:v 600k -an -r 24 -vtag hvc1 Birthday.mov
+~/desktop/ffmpeg -i 坐地排球.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Volleyball.mov
+~/desktop/ffmpeg -i 故事.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:400:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Story.mov
+~/desktop/ffmpeg -i 校慶.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 SchoolCelebration.mov
+~/desktop/ffmpeg -i 勝利.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Victory.mov
+~/desktop/ffmpeg -i 運動.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:390:0" -alpha_quality 0.1 -b:v 480k -an -r 24 -vtag hvc1 Exercise.mov
+~/desktop/ffmpeg -i 演講.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:400:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 Speech.mov
+~/desktop/ffmpeg -i 聽打.webm -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -vtag hvc1 ListenTo.mov
+
+
+crop webm  to 1080x1080
+~/desktop/ffmpeg -i 公告.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:390:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy Announcement.webm
+~/desktop/ffmpeg -i 手語翻譯.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy Translation.webm
+~/desktop/ffmpeg -i 生日.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:400:0" -alpha_quality 0.01 -b:v 600k -an -r 24 -c:a copy Birthday.webm
+~/desktop/ffmpeg -i 坐地排球.webm  -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy Volleyball.webm
+~/desktop/ffmpeg -i 故事.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:400:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy  Story.webm
+~/desktop/ffmpeg -i 校慶.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy SchoolCelebration.webm
+~/desktop/ffmpeg -i 勝利.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy Victory.webm
+~/desktop/ffmpeg -i 運動.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:390:0" -alpha_quality 0.1 -b:v 480k -an -r 24 -c:a copy Exercise.webm
+~/desktop/ffmpeg -i 演講.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:400:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy Speech.webm
+~/desktop/ffmpeg -i 聽打.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,crop=1080:1080:420:0" -alpha_quality 0.01 -b:v 480k -an -r 24 -c:a copy ListenTo.webm
+
+//to 720x720
+~/desktop/ffmpeg -i Announcement.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Announcement720.mov
+~/desktop/ffmpeg -i Translation.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Translation720.mov
+~/desktop/ffmpeg -i Birthday.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Birthday720.mov
+~/desktop/ffmpeg -i Volleyball.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Volleyball720.mov
+~/desktop/ffmpeg -i Story.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Story720.mov
+~/desktop/ffmpeg -i SchoolCelebration.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 SchoolCelebration720.mov
+~/desktop/ffmpeg -i Victory.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Victory720.mov
+~/desktop/ffmpeg -i Exercise.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Exercise720.mov
+~/desktop/ffmpeg -i Speech.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 Speech720.mov
+~/desktop/ffmpeg -i ListenTo.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le, scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -vtag hvc1 ListenTo720.mov
+
+~/desktop/ffmpeg -i Announcement.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy Announcement720.webm
+~/desktop/ffmpeg -i Translation.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy Translation720.webm
+~/desktop/ffmpeg -i Birthday.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy Birthday720.webm
+~/desktop/ffmpeg -i Volleyball.webm  -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy Volleyball720.webm
+~/desktop/ffmpeg -i Story.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy  Story720.webm
+~/desktop/ffmpeg -i SchoolCelebration.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy SchoolCelebration720.webm
+~/desktop/ffmpeg -i Victory.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy Victory720.webm
+~/desktop/ffmpeg -i Exercise.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.1 -b:v 360k -an -r 24 -c:a copy Exercise720.webm
+~/desktop/ffmpeg -i Speech.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy Speech720.webm
+~/desktop/ffmpeg -i ListenTo.webm -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le,scale=720:-1" -alpha_quality 0.01 -b:v 360k -an -r 24 -c:a copy ListenTo720.webm
+
+
+
+mov to webm
+~/desktop/ffmpeg -i wind.mov -c:v libvpx-vp9 -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le" -alpha_quality 0.01 -b:v 600k -an -r 24  Birthday1.webm
+mov to mov
+~/desktop/ffmpeg -i wind.mov -c:v hevc_videotoolbox -allow_sw 1 -vf "colorkey=0x000000:0.1:0.0,format=yuva420p10le" -alpha_quality 0.01 -b:v 600k -an -r 24 -vtag hvc1 Birthday1.mov
